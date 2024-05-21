@@ -1,0 +1,30 @@
+.DS_Store
+run/
+build/
+bin/
+.gradle/
+.architectury-transformer/
+remappedSrc/
+
+# vscode
+.vscode/launch.json
+.vscode/settings.json
+
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
