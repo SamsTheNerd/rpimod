@@ -5,10 +5,10 @@ This is a tutorial mod for the Modding Basics workshop.
 
 ## Project structure
 
-```yaml
+```shell
 ├── .gitignore : test
 ├── build.gradle
-├── common/
+├── common/ 
 │   ├── build.gradle
 │   └── src/
 │       └── main/
@@ -42,6 +42,13 @@ This is a tutorial mod for the Modding Basics workshop.
 │       ├── gradle-wrapper.jar
 │       └── gradle-wrapper.properties
 ├── gradle.properties
+├── gradlew
+├── gradlew.bat
+└── settings.gradle
+```
+
+```yaml
+├── gradle.properties : test
 ├── gradlew
 ├── gradlew.bat
 └── settings.gradle
