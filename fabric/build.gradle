@@ -1,12 +1,22 @@
+/*
+The gradle build file for the fabric subproject
+
+Mostly deals with making sure the fabric project is set up right and all the jars get built properly.
+You can skim/ignore most of it for now, take a look at the dependencies block though.
+
+*/
+
 plugins {
     id 'com.github.johnrengelman.shadow'
 }
 
+// tell architectury plugin what's going on with this subproject
 architectury {
     platformSetupLoomIde()
     fabric()
 }
 
+// tell gradle that fabric can use common subproject's code but not the other way.
 configurations {
     common {
         canBeResolved = true
@@ -24,32 +34,39 @@ configurations {
     }
 }
 
+// set up fabric dependencies
 dependencies {
+    // fabric loader, required for your code to run.
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
 
-    // Fabric API. This is technically optional, but you probably want it anyway.
+    // Fabric API. This is technically optional, but there's no reason not to have it. Provides many events, hooks, and other helpful code.
     modImplementation "net.fabricmc.fabric-api:fabric-api:$rootProject.fabric_api_version"
 
-    // Architectury API. This is optional, and you can comment it out if you don't need it.
+    // Architectury API. This is just the fabric code for it. Still not absolutely required but if you have it in common you should have this here too.
     modImplementation "dev.architectury:architectury-fabric:$rootProject.architectury_api_version"
 
+    // have fabric depend on common
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
 }
 
 processResources {
+    // processResources won't rerun if all the inputs are the same as last run, this tells it to watch for version changing.
     inputs.property 'version', project.version
 
+    // "in fabric.mod.json, replace ${version} with the value of project.version" - kyra
     filesMatching('fabric.mod.json') {
         expand version: project.version
     }
 }
 
+// putting common stuff into fabric jar
 shadowJar {
     configurations = [project.configurations.shadowBundle]
     archiveClassifier = 'dev-shadow'
 }
 
+// telling it which jar to remap.
 remapJar {
     input.set shadowJar.archiveFile
 }

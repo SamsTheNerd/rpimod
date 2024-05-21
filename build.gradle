@@ -1,3 +1,11 @@
+/*
+This is the gradle build file for the entire project.
+Its main job is setting up Minecraft dependencies, some java details, and the subprojects (common/forge/fabric)
+
+You probably won't really need to touch too much in here unless you need to depend on another mod/library
+or mess with build stuff but I wouldn't recommend doing that until you're a bit more familiar with everything.
+*/
+
 // add our gradle plugins
 plugins {
     // NOTE: these architectury bits are different from architectury API
@@ -21,6 +29,7 @@ allprojects {
     version = rootProject.mod_version 
 }
 
+// set up the subprojects, so common, forge, fabric
 subprojects {
     apply plugin: 'dev.architectury.loom'
     apply plugin: 'architectury-plugin'
@@ -39,6 +48,7 @@ subprojects {
         // for more information about repositories.
     }
 
+    // depend on minecraft, pretty important
     dependencies {
         minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"
         mappings "net.fabricmc:yarn:$rootProject.yarn_mappings:v2"
@@ -58,7 +68,7 @@ subprojects {
         it.options.release = 17
     }
 
-    // Configure Maven publishing.
+    // Configure Maven publishing - not really something you'll worry about for a while
     publishing {
         publications {
             mavenJava(MavenPublication) {

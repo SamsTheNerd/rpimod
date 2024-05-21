@@ -1,3 +1,15 @@
+/*
+The gradle build file for common.
+
+You'll put common dependencies in here, so things that BOTH forge and fabric depend on. 
+
+This is usually either non-mods or a common version, which you mostly only see for 
+library mods or big mods that are set up to be easily depended on.
+
+If you find yourself in a situation where you don't have a common version you can usually just use the forge or fabric one and 
+hope they have clean common api code.
+*/
+
 architectury {
     common rootProject.enabled_platforms.split(',')
 }
@@ -8,6 +20,7 @@ dependencies {
     // Do NOT use other classes from Fabric Loader.
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
 
-    // Architectury API. This is optional, and you can comment it out if you don't need it.
+    // THis is the architectury API. 
+    // It's not strictly needed but it abstracts a lot of the forge/fabric sided code into a common API.
     modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
 }

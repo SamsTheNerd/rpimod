@@ -1,18 +1,28 @@
+/*
+The gradle build file for the forge subproject
+
+Mostly deals with making sure the forge project is set up right and all the jars get built properly.
+You can skim/ignore most of it for now, take a look at the dependencies block though.
+
+*/
 plugins {
     id 'com.github.johnrengelman.shadow'
 }
 
+// tell it that we're using mixins
 loom {
     forge {
         mixinConfig "rpimod.mixins.json"
     }
 }
 
+// tell it we're doing forge
 architectury {
     platformSetupLoomIde()
     forge()
 }
 
+// tell gradle that forge can use common subproject's code but not the other way.
 configurations {
     common {
         canBeResolved = true
@@ -30,29 +40,37 @@ configurations {
     }
 }
 
+// add forge dependencies
 dependencies {
+    // forge mod loader itself. unlike fabric, forge has its loader and hooks together, so it's required
     forge "net.minecraftforge:forge:$rootProject.forge_version"
 
-    // Architectury API. This is optional, and you can comment it out if you don't need it.
+    // Architectury API. Same deal as fabric version, nice but not required. Use it if you're using it in common though.
     modImplementation "dev.architectury:architectury-forge:$rootProject.architectury_api_version"
 
+    // have forge depend on common
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionForge')
 }
 
+
 processResources {
+    // processResources won't rerun if all the inputs are the same as last run, this tells it to watch for version changing.
     inputs.property 'version', project.version
 
+    // "in META-INF/mods.toml, replace ${version} with the value of project.version" - kyra
     filesMatching('META-INF/mods.toml') {
         expand version: project.version
     }
 }
 
+// putting common stuff into forge jar
 shadowJar {
     configurations = [project.configurations.shadowBundle]
     archiveClassifier = 'dev-shadow'
 }
 
+// telling it which jar to remap.
 remapJar {
     input.set shadowJar.archiveFile
 }
