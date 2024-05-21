@@ -5,12 +5,12 @@ This is a tutorial mod for the Modding Basics workshop.
 
 ## Project structure
 
-```shell
-├── .gitignore 
+```yaml
+├── .gitignore :
 ├── build.gradle : project build file
 ├── common/ : common subproject
 │   ├── build.gradle : common subproject build file
-│   └── src/ 
+│   └── src/ :
 │       └── main/ : all your common stuff goes here
 │           ├── java/com/quatalog/rpimod/ : code goes here
 │           │   └── RPIMod.java : common entrypoint-ish
@@ -18,8 +18,8 @@ This is a tutorial mod for the Modding Basics workshop.
 │               └── rpimod.mixins.json : define common mixins here
 ├── fabric/ : fabric subproject
 │   ├── build.gradle : fabric subproject build file
-│   └── src/
-│       └── main/
+│   └── src/ :
+│       └── main/ :
 │           ├── java/com/quatalog/rpimod/fabric/ : fabric specific code goes here
 │           │   ├── RPIModFabric.java : fabric entrypoint
 │           │   └── client/ : fabric client code goes here
