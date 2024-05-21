@@ -16,7 +16,7 @@ architectury {
     fabric()
 }
 
-// tell gradle that fabric can use common subproject's code but not the other way.
+// creates new dependency configurations that are used to include common code in the fabric jar and include common dependencies in the fabric dev environment
 configurations {
     common {
         canBeResolved = true
@@ -45,7 +45,7 @@ dependencies {
     // Architectury API. This is just the fabric code for it. Still not absolutely required but if you have it in common you should have this here too.
     modImplementation "dev.architectury:architectury-fabric:$rootProject.architectury_api_version"
 
-    // have fabric depend on common
+    // have fabric depend on common and copy its files into the fabric jar
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
 }

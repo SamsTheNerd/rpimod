@@ -2,6 +2,7 @@
 
 This is a tutorial mod for the Modding Basics workshop.
 
+It was generated using https://generate.architectury.dev/. I recommend using that for generating your own project. 
 
 ## Project structure
 

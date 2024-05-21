@@ -1,0 +1,42 @@
+./
+├── .gitignore
+├── build.gradle
+├── common/
+│   ├── build.gradle
+│   └── src/
+│       └── main/
+│           ├── java/com/quatalog/rpimod/
+│           │   └── RPIMod.java 
+│           └── resources/
+│               └── rpimod.mixins.json
+├── fabric/
+│   ├── build.gradle
+│   └── src/
+│       └── main/
+│           ├── java/com/quatalog/rpimod/fabric/
+│           │   ├── RPIModFabric.java
+│           │   └── client/
+│           │       └── RPIModFabricClient.java
+│           └── resources/
+│               └── fabric.mod.json
+├── forge/
+│   ├── build.gradle
+│   ├── gradle.properties
+│   └── src/
+│       └── main/
+│           ├── java/com/quatalog/rpimod/forge/
+│           │   └── RPIModForge.java
+│           └── resources/
+│               ├── META-INF/
+│               │   └── mods.toml
+│               └── pack.mcmeta
+├── gradle/
+│   └── wrapper/
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+└── settings.gradle
+
+30 directories, 20 files

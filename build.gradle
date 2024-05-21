@@ -2,6 +2,8 @@
 This is the gradle build file for the entire project.
 Its main job is setting up Minecraft dependencies, some java details, and the subprojects (common/forge/fabric)
 
+Anything that applies to all the subprojects should go here.
+
 You probably won't really need to touch too much in here unless you need to depend on another mod/library
 or mess with build stuff but I wouldn't recommend doing that until you're a bit more familiar with everything.
 */

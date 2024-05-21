@@ -22,7 +22,7 @@ architectury {
     forge()
 }
 
-// tell gradle that forge can use common subproject's code but not the other way.
+// creates new dependency configurations that are used to include common code in the forge jar and include common dependencies in the forge dev environment
 configurations {
     common {
         canBeResolved = true
@@ -48,7 +48,7 @@ dependencies {
     // Architectury API. Same deal as fabric version, nice but not required. Use it if you're using it in common though.
     modImplementation "dev.architectury:architectury-forge:$rootProject.architectury_api_version"
 
-    // have forge depend on common
+    // have forge depend on common and copy its files into the forge jar
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionForge')
 }
