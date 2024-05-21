@@ -24,23 +24,23 @@ It was generated using https://generate.architectury.dev/. I recommend using tha
 │           ├── java/com/quatalog/rpimod/fabric/ : fabric specific code goes here
 │           │   ├── RPIModFabric.java : fabric entrypoint
 │           │   └── client/ : fabric client code goes here
-│           │       └── RPIModFabricClient.java
-│           └── resources/
-│               └── fabric.mod.json
-├── forge/
-│   ├── build.gradle
-│   ├── gradle.properties
-│   └── src/
-│       └── main/
-│           ├── java/com/quatalog/rpimod/forge/
-│           │   └── RPIModForge.java
-│           └── resources/
-│               ├── META-INF/
-│               │   └── mods.toml
-│               └── pack.mcmeta
+│           │       └── RPIModFabricClient.java : fabric client entrypoint
+│           └── resources/ : fabric specific resources, not usually used much
+│               └── fabric.mod.json : metadata-ish about your mod for fabric
+├── forge/ : forge subproject
+│   ├── build.gradle : forge subproject build file
+│   ├── gradle.properties :
+│   └── src/ :
+│       └── main/ :
+│           ├── java/com/quatalog/rpimod/forge/ : forge specific code goes here
+│           │   └── RPIModForge.java : forge entrypoint
+│           └── resources/ : forge specific resources, again, not used much
+│               ├── META-INF/ :
+│               │   └── mods.toml : metadata-ish about your mod for forge
+│               └── pack.mcmeta :
 ├── gradle/wrapper/ : makes gradle exist
-│   ├── gradle-wrapper.jar
-│   └── gradle-wrapper.properties
+│   ├── gradle-wrapper.jar :
+│   └── gradle-wrapper.properties :
 ├── gradle.properties : properties that the gradle build files use
 ├── gradlew : for running gradle on linux/mac
 ├── gradlew.bat : for running gradle on windows
