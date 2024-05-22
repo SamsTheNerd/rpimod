@@ -6,6 +6,12 @@ import dev.architectury.platform.forge.EventBuses;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+/*
+ * This is the forge entrypoint-ish, defined by the @Mod annotation
+ * 
+ * A single instance of this class gets made, you can then use the Event Bus system
+ * to run your code on various events, including client setup.
+ */
 @Mod(RPIMod.MOD_ID)
 public final class RPIModForge {
     public RPIModForge() {
