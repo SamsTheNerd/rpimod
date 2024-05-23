@@ -20,6 +20,8 @@ public final class RPIModFabric implements ModInitializer {
         // However, some things (like resources) may still be uninitialized.
         // Proceed with mild caution.
 
+        RPIMod.LOGGER.info("Hi hi from fabric !");
+
         // Run our common setup.
         RPIMod.init();
     }

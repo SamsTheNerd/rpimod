@@ -27,6 +27,6 @@ public final class RPIMod {
 
     // We'll call this in our loader specific entrypoints when it's initialization time.
     public static void init() {
-
+        LOGGER.info("Hello from common !");
     }
 }

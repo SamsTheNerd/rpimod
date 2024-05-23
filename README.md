@@ -1,6 +1,6 @@
 # RPI Mod
 
-This is a tutorial Minecraft mod for the Modding Basics workshop. All of the files are commented with descriptions and other helpful notes. Many directories also have a README describing their contents.
+This is a tutorial Minecraft mod for the Modding Basics workshop. All of the files are commented with descriptions and other helpful notes. Many directories also have a README describing their contents, with most of the helpful info in `common`, just to avoid redundancy.
 
 It was generated using https://generate.architectury.dev/. I recommend using that for generating your own project. 
 
@@ -37,17 +37,21 @@ Same as above but using `gradlew.bat` instead of `./gradlew`
 │   └── src/ :
 │       └── main/ : all your common stuff goes here
 │           ├── java/com/quatalog/rpimod/ : code goes here
-│           │   └── RPIMod.java : common entrypoint-ish
+│           │   ├── client/ : client code here
+│           │   │   └── RPIModClient.java : common client setup
+│           │   └── RPIMod.java : common setup
 │           └── resources/ : assets and data go here
+│               ├── assets/ : client resources (assets) go here
+│               ├── data/ : server resources (data) go here
 │               └── rpimod.mixins.json : define common mixins here
 ├── fabric/ : fabric subproject
 │   ├── build.gradle : fabric subproject build file
 │   └── src/ :
 │       └── main/ :
 │           ├── java/com/quatalog/rpimod/fabric/ : fabric specific code goes here
-│           │   ├── RPIModFabric.java : fabric entrypoint
+│           │   ├── RPIModFabric.java : fabric setup & entrypoint
 │           │   └── client/ : fabric client code goes here
-│           │       └── RPIModFabricClient.java : fabric client entrypoint
+│           │       └── RPIModFabricClient.java : fabric client setup & entrypoint
 │           └── resources/ : fabric specific resources, not usually used much
 │               └── fabric.mod.json : metadata-ish about your mod for fabric
 ├── forge/ : forge subproject
@@ -56,7 +60,9 @@ Same as above but using `gradlew.bat` instead of `./gradlew`
 │   └── src/ :
 │       └── main/ :
 │           ├── java/com/quatalog/rpimod/forge/ : forge specific code goes here
-│           │   └── RPIModForge.java : forge entrypoint
+│           │   ├── client/ : client code here
+│           │   │   └── RPIModForgeClient.java : forge client setup & entrypoint-ish
+│           │   └── RPIModForge.java : forge setup & entrypoint
 │           └── resources/ : forge specific resources, again, not used much
 │               ├── META-INF/ :
 │               │   └── mods.toml : metadata-ish about your mod for forge

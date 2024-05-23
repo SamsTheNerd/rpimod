@@ -1,5 +1,8 @@
 package com.quatalog.rpimod.fabric.client;
 
+import com.quatalog.rpimod.RPIMod;
+import com.quatalog.rpimod.client.RPIModClient;
+
 import net.fabricmc.api.ClientModInitializer;
 
 /*
@@ -13,5 +16,9 @@ public final class RPIModFabricClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
+        RPIMod.LOGGER.info("Howdy from fabric client !");
+
+        // initialize our common client code
+        RPIModClient.init();
     }
 }
