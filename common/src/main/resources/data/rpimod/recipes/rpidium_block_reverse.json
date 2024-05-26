@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "rpimod:rpidium_block"
+        }
+    ],
+    "result": {
+        "item": "rpimod:rpidium_crystal",
+        "count": 9
+    }
+}

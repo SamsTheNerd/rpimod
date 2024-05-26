@@ -1,0 +1,8 @@
+{
+    "replace": false,
+    "values": [
+        "rpimod:rpidium_block",
+        "rpimod:rpidium_ore"
+    ]
+  }
+

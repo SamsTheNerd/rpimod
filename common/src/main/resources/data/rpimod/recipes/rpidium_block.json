@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "CCC",
+        "CCC",
+        "CCC"
+    ],
+    "key": {
+        "C": {
+            "item": "rpimod:rpidium_crystal"
+        }
+    },
+    "result": {
+        "item": "rpimod:rpidium_block"
+    }
+}

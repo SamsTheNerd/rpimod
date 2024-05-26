@@ -1,0 +1,9 @@
+{
+    "block.rpimod.rpidium_ore": "RPIdium Ore",
+    "block.rpimod.rpidium_block": "Block of RPIdium",
+
+    "item.rpimod.rpidium_crystal": "RPIdium",
+    "item.rpimod.empaxel": "Empaxel",
+
+    "itemgroup.rpimod.general": "RPI Tutorial Mod"
+}

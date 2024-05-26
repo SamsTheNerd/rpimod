@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "rpimod:block/rpidium_ore" }
+    }
+}

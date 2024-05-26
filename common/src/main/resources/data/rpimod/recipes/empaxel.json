@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "CCC",
+        " NC",
+        "N C"
+    ],
+    "key": {
+        "C": {
+            "item": "rpimod:rpidium_crystal"
+        },
+        "N": {
+            "item": "netherite_ingot"
+        }
+    },
+    "result": {
+        "item": "rpimod:empaxel"
+    }
+}
