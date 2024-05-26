@@ -16,6 +16,9 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+/*
+ * This is where we add our items.
+ */
 public class RPIModItems {
     
     // arch deferred registry for items

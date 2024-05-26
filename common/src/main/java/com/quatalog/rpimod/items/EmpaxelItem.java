@@ -7,6 +7,9 @@ import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.registry.tag.BlockTags;
 
+/*
+ * This is the class for our Empaxel item. It extends MiningToolItem because that's pretty close to what we want to do.
+ */
 public class EmpaxelItem extends MiningToolItem {
     public EmpaxelItem(Settings settings){
         // based on a diamond pickaxe, except we want to make it work for pickaxe, axe, and shovel tags
