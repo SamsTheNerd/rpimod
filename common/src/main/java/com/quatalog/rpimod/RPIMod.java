@@ -3,9 +3,6 @@ package com.quatalog.rpimod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.quatalog.rpimod.registry.RPIModBlocks;
-import com.quatalog.rpimod.registry.RPIModItems;
-
 /*
  * It seems to be tradition to name your entrypoint class just the name of your mod. 
  * 
@@ -33,7 +30,9 @@ public final class RPIMod {
         LOGGER.info("Hello from common !");
 
         // register our blocks and items -- order is important here since block items require blocks being registered
+        /* 
         RPIModBlocks.register();
         RPIModItems.register();
+        */
     }
 }

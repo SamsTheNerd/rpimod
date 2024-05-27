@@ -1,8 +1,5 @@
 package com.quatalog.rpimod.items;
 
-import net.fabricmc.yarn.constants.MiningLevels;
-import net.minecraft.block.BlockState;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.registry.tag.BlockTags;
@@ -15,6 +12,8 @@ public class EmpaxelItem extends MiningToolItem {
         // based on a diamond pickaxe, except we want to make it work for pickaxe, axe, and shovel tags
         super(1, -2.8f, ToolMaterials.DIAMOND, BlockTags.PICKAXE_MINEABLE, settings);
     }
+
+    /* [ MAKE THE EMPAXEL ACTUALLY MINE STUFF ]
 
     // overriding getMiningSpeedMultiplier and isSuitableFor to check all 3 tags 
     // NOTE: it's generally not ideal to have to reimplement code when you're overriding methods, but sometimes it can't be easily avoided
@@ -46,4 +45,6 @@ public class EmpaxelItem extends MiningToolItem {
         }
         return isInEffectiveTags(state);
     }
+
+    */
 }

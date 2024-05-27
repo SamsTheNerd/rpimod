@@ -3,7 +3,6 @@ package com.quatalog.rpimod.registry;
 import java.util.function.Supplier;
 
 import com.quatalog.rpimod.RPIMod;
-import com.quatalog.rpimod.items.EmpaxelItem;
 
 import dev.architectury.registry.CreativeTabRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
@@ -26,12 +25,17 @@ public class RPIModItems {
     // arch deferred registry for tabs
     public static final DeferredRegister<ItemGroup> TABS = DeferredRegister.create(RPIMod.MOD_ID, RegistryKeys.ITEM_GROUP);
 
+    /* [ ADD RPIDIUM CRYSTAL CHUNK THING ]
     // register an item with nothing particularly special and id `rpimod:rpidium_crystal`
     public static final RegistrySupplier<Item> RPIDIUM_CRYSTAL_ITEM = item("rpidium_crystal",
         () -> new Item(defaultSettings()));
 
+    */
+
+    /* [ ADD EMPAXEL ]
     public static final RegistrySupplier<EmpaxelItem> EMPAXEL_ITEM = item("empaxel",
         () -> new EmpaxelItem(defaultSettings()));
+    */ 
 
     // make our creative tab.
     public static final RegistrySupplier<ItemGroup> RPI_MOD_GROUP = TABS.register("rpimod_tab", () ->
